@@ -415,7 +415,7 @@ namespace Ogre
         case TAM_MIRROR:                return MTLSamplerAddressModeMirrorRepeat;
         case TAM_CLAMP:                 return MTLSamplerAddressModeClampToEdge;
         //Not supported. Get the best next thing.
-        case TAM_BORDER:                return MTLSamplerAddressModeClampToEdge;
+        case TAM_BORDER:                return MTLSamplerAddressModeClampToZero;
         default:                        return MTLSamplerAddressModeClampToEdge;
         }
     }
