@@ -703,6 +703,15 @@ namespace Ogre
                     outString += finalTexName + mAdditionalExtension;
                     outString += '"';
                 }
+                else if (!texLocation.texture->getName().empty())
+                {
+                    String finalTexName = texLocation.texture->getName();
+                    mListener->savingChangeTextureName(finalTexName);
+
+                    outString += ",\n\t\t\t\t\"texture\" : \"";
+                    outString += finalTexName + mAdditionalExtension;
+                    outString += '"';
+                }
             }
 
             const HlmsSamplerblock *samplerblock = datablock->getSamplerblock( textureType );
